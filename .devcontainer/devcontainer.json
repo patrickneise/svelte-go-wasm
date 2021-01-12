@@ -21,7 +21,7 @@
 		"go.goroot": "/usr/local/go",
 		"go.toolsGopath": "/go/bin",
 		"[javascript]": {
-			"editor.tabSize": 2
+			"editor.tabSize": 2,
 		},
 		"[svelte]": {
 			"editor.tabSize": 2,
