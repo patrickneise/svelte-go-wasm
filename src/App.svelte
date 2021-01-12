@@ -7,8 +7,14 @@
   );
 
   let jsoninput = "";
+
   let handleJson = function (input) {
-    jsonoutput.value = formatJSON(input);
+    var result = formatJSON(input);
+    if (result != null && "error" in result) {
+      console.log("Go return value", result);
+      jsonoutput.value = "";
+      alert(result.error);
+    }
   };
 </script>
 
