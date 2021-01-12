@@ -34,3 +34,11 @@ yarn start
 ```
 
 Site available at [http://localhost:8080](http://localhost:8080)
+
+Paste the following into the first text area.
+
+```json
+{"website":"golangbot.com", "tutorials": {"string":"https://golangbot.com/strings/", "maps":"https://golangbot.com/maps/", "goroutine":"https://golangbot.com/goroutines/", "channels":"https://golangbot.com/channels/"}}
+```
+
+Click the `pretty json` button to see the JSON is pretty printed to the output text area.
