@@ -1,0 +1,52 @@
+{
+	"name": "Go",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			// Update the VARIANT arg to pick a version of Go: 1, 1.15, 1.14
+			"VARIANT": "1.15",
+			// Options
+			"INSTALL_NODE": "true",
+			"NODE_VERSION": "lts/*"
+		}
+	},
+	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"go.useGoProxyToCheckForToolUpdates": false,
+		"go.gopath": "/go",
+		"go.useLanguageServer": true,
+		"go.goroot": "/usr/local/go",
+		"go.toolsGopath": "/go/bin",
+		"[javascript]": {
+			"editor.tabSize": 2
+		},
+		"[svelte]": {
+			"editor.tabSize": 2,
+			"editor.defaultFormatter": "svelte.svelte-vscode",
+			"editor.formatOnSave": true
+		},
+		"editor.insertSpaces": true,
+	},
+	
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"golang.Go",
+		"dbaeumer.vscode-eslint",
+		"svelte.svelte-vscode",
+		"bradlc.vscode-tailwindcss",
+		"urbantrout.refactor-css",
+		"heybourn.headwind",
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [35729],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "go version",
+
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
